@@ -37,7 +37,6 @@ const App = () =>{
         if(filter === 'completed') return task.completed;
         if(filter === 'incompleted') return !task.completed;
         return true;
-
     });
 
     return(
@@ -51,7 +50,7 @@ const App = () =>{
                 onChange = {(e) => setTaskName(e.target.value)}
                 required
                 />
-
+                
                 <input 
                 type = "date" 
                 value = {dueDate}
@@ -63,7 +62,6 @@ const App = () =>{
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 />
-
                 <button type="submit">Add Task</button>
             </form>
 
@@ -82,27 +80,17 @@ const App = () =>{
                         {task.desc && <p>{task.desc}</p>}
 
                         <label>
-
                             <input 
                             type ="checkbox"
                             checked = {task.completed}
-                            onChange = {() => toggleComplete(task.id)}
-                            
+                            onChange = {() => toggleComplete(task.id)}  
                             />
-
                             {task.completed ? 'Completed' : 'Mark as complete'}
-
                         </label>
-
                     </li>
-
                 ))}
-
             </ul>
-
         </div>
     );
-
 };
-
 export default App;
