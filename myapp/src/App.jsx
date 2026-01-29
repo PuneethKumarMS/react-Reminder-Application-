@@ -18,13 +18,11 @@ const App = () =>{
             desc: description,
             completed: false,
         };
-        
         setTasks([...tasks, newTask]);
         setTaskName('');
         setDueDate('');
         setDescription('');
     };
-
     const toggleComplete = (id) =>{
         setTasks(
             tasks.map((task) =>
@@ -32,7 +30,6 @@ const App = () =>{
             )
         );
     };
-
     const filteredTasks = tasks.filter((task) => {
         if(filter === 'completed') return task.completed;
         if(filter === 'incompleted') return !task.completed;
@@ -73,7 +70,6 @@ const App = () =>{
 
             <ul className = 'task-list'>
                 {filteredTasks.map((task) => (
-
                     <li key = {task.id} className="{task.completed ? 'completed' : ''}">
                         <h3>{task.name}</h3>
                         <p>Due: {task.date}</p>
